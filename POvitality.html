@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad — Vitality</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+      :root {
+        --blue: #2563eb;
+        --blue-light: #eff6ff;
+        --blue-mid: #bfdbfe;
+        --dark: #0f172a;
+        --mid: #334155;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --bg: #f8fafc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #1e3a8a 0%,
+          #2563eb 60%,
+          #3b82f6 100%
+        );
+        padding: 64px 24px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 80% 10%, #60a5fa2a 0%, transparent 55%),
+          radial-gradient(ellipse at 10% 90%, #1e40af33 0%, transparent 50%);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .hero-badge .shield {
+        font-size: 16px;
+      }
+
+      .hero h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(30px, 6vw, 50px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -1px;
+        position: relative;
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        font-size: 16px;
+        color: #bfdbfe;
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto 28px;
+      }
+
+      .hero-meta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .hero-meta span {
+        font-size: 13px;
+        color: #93c5fd;
+        font-weight: 500;
+      }
+
+      /* ── LAYOUT ── */
+      .container {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      /* ── RESUMEN VISUAL ── */
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px;
+        margin-bottom: 40px;
+      }
+
+      .summary-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px 16px;
+        text-align: center;
+      }
+
+      .summary-card .icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .summary-card .label {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--dark);
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .summary-card .desc {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* ── TOC ── */
+      .toc {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px;
+        margin-bottom: 40px;
+      }
+
+      .toc-title {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--blue);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .toc ol {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      @media (max-width: 520px) {
+        .toc ol {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .toc ol li a {
+        font-size: 14px;
+        color: var(--mid);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .toc ol li a:hover {
+        background: var(--blue-light);
+        color: var(--blue);
+      }
+
+      .toc ol li a .num {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue);
+        background: var(--blue-light);
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* ── SECCIONES ── */
+      .section {
+        margin-bottom: 48px;
+        scroll-margin-top: 24px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+        padding-bottom: 14px;
+        border-bottom: 2px solid var(--blue-light);
+      }
+
+      .section-num {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--blue);
+        background: var(--blue-light);
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .section h2 {
+        font-family: "Syne", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      .section p {
+        font-size: 15px;
+        color: var(--mid);
+        margin-bottom: 14px;
+      }
+
+      .section ul,
+      .section ol {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 14px;
+      }
+
+      .section ul li,
+      .section ol li {
+        font-size: 15px;
+        color: var(--mid);
+        padding: 8px 0 8px 28px;
+        position: relative;
+        border-bottom: 1px solid var(--bg);
+      }
+
+      .section ul li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .section ol {
+        counter-reset: item;
+      }
+      .section ol li {
+        counter-increment: item;
+      }
+      .section ol li::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      /* ── CALLOUTS ── */
+      .callout {
+        border-radius: 14px;
+        padding: 18px 20px;
+        margin-bottom: 16px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .callout.blue {
+        background: var(--blue-light);
+        border: 1px solid var(--blue-mid);
+      }
+      .callout.yellow {
+        background: #fef9c3;
+        border: 1px solid #fde047;
+      }
+      .callout.red {
+        background: #fee2e2;
+        border: 1px solid #fecaca;
+      }
+      .callout.green {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+      }
+      .callout.purple {
+        background: #faf5ff;
+        border: 1px solid #e9d5ff;
+      }
+
+      .callout-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .callout-text {
+        font-size: 14px;
+        color: var(--mid);
+        line-height: 1.6;
+      }
+      .callout-text strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+
+      /* ── TABLA ── */
+      .table-wrap {
+        overflow-x: auto;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+
+      thead tr {
+        background: var(--blue-light);
+      }
+
+      th {
+        padding: 12px 16px;
+        text-align: left;
+        font-weight: 700;
+        color: var(--blue);
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+
+      td {
+        padding: 12px 16px;
+        color: var(--mid);
+        border-top: 1px solid var(--border);
+      }
+      tr:hover td {
+        background: var(--bg);
+      }
+
+      /* ── DERECHOS ── */
+      .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .right-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .right-card .right-icon {
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+
+      .right-card .right-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+
+      .right-card .right-desc {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ── CONTACTO ── */
+      .contact-card {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        border-radius: 20px;
+        padding: 32px;
+        text-align: center;
+        color: #fff;
+        margin-top: 48px;
+      }
+
+      .contact-card h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .contact-card p {
+        color: #bfdbfe;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .contact-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .contact-pill {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 100px;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        text-align: center;
+        padding: 32px 24px;
+        font-size: 13px;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+      }
+
+      .footer strong {
+        color: var(--blue);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-badge">
+        <span class="shield">🛡️</span>
+        Protección de datos personales
+      </div>
+      <h1>Política de Privacidad</h1>
+      <p>
+        Cómo recopilamos, usamos y protegemos tu información personal en
+        Vitality
+      </p>
+      <div class="hero-meta">
+        <span>📅 Versión 1.0.0</span>
+        <span>📍 Colombia</span>
+        <span>⚖️ Ley 1581 de 2012</span>
+        <span>🔄 Vigente desde junio 2025</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- RESUMEN VISUAL -->
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span class="icon">🔒</span>
+          <span class="label">Datos seguros</span>
+          <span class="desc">Cifrado SSL en toda la comunicación</span>
+        </div>
+        <div class="summary-card">
+          <span class="icon">🚫</span>
+          <span class="label">Sin venta</span>
+          <span class="desc">No vendemos tus datos a terceros</span>
+        </div>
+        <div class="summary-card">
+          <span class="icon">✋</span>
+          <span class="label">Tú decides</span>
+          <span class="desc">Puedes eliminar tu cuenta cuando quieras</span>
+        </div>
+        <div class="summary-card">
+          <span class="icon">⚖️</span>
+          <span class="label">Ley 1581</span>
+          <span class="desc">Cumplimos la ley colombiana de Habeas Data</span>
+        </div>
+      </div>
+
+      <!-- TOC -->
+      <div class="toc">
+        <div class="toc-title">📋 Contenido</div>
+        <ol>
+          <li>
+            <a href="#s1"
+              ><span class="num">1</span> Responsable del tratamiento</a
+            >
+          </li>
+          <li>
+            <a href="#s2"><span class="num">2</span> Datos que recopilamos</a>
+          </li>
+          <li>
+            <a href="#s3"><span class="num">3</span> Datos de salud</a>
+          </li>
+          <li>
+            <a href="#s4"
+              ><span class="num">4</span> Finalidad del tratamiento</a
+            >
+          </li>
+          <li>
+            <a href="#s5"><span class="num">5</span> Base legal</a>
+          </li>
+          <li>
+            <a href="#s6"><span class="num">6</span> Compartir datos</a>
+          </li>
+          <li>
+            <a href="#s7"><span class="num">7</span> Almacenamiento</a>
+          </li>
+          <li>
+            <a href="#s8"><span class="num">8</span> Tus derechos</a>
+          </li>
+          <li>
+            <a href="#s9"><span class="num">9</span> Menores de edad</a>
+          </li>
+          <li>
+            <a href="#s10"><span class="num">10</span> Cookies y analytics</a>
+          </li>
+          <li>
+            <a href="#s11"
+              ><span class="num">11</span> Cambios a esta política</a
+            >
+          </li>
+          <li>
+            <a href="#s12"><span class="num">12</span> Contacto</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 1 -->
+      <div class="section" id="s1">
+        <div class="section-header">
+          <span class="section-num">1</span>
+          <h2>Responsable del tratamiento</h2>
+        </div>
+        <p>
+          El responsable del tratamiento de los datos personales recopilados a
+          través de la aplicación <strong>Vitality</strong> es:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>Nombre</strong></td>
+                <td>Operador de Vitality (persona natural)</td>
+              </tr>
+              <tr>
+                <td><strong>Ciudad</strong></td>
+                <td>Bucaramanga, Santander, Colombia</td>
+              </tr>
+              <tr>
+                <td><strong>Correo</strong></td>
+                <td>soporte@vitality.com.co</td>
+              </tr>
+              <tr>
+                <td><strong>Aplicación</strong></td>
+                <td>Vitality — Google Play Store</td>
+              </tr>
+              <tr>
+                <td><strong>Marco legal</strong></td>
+                <td>Ley 1581 de 2012 · Decreto 1377 de 2013</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="s2">
+        <div class="section-header">
+          <span class="section-num">2</span>
+          <h2>Datos que recopilamos</h2>
+        </div>
+        <p>
+          Vitality recopila únicamente los datos necesarios para prestar el
+          servicio:
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Categoría</th>
+                <th>Datos</th>
+                <th>Quién</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Identificación</strong></td>
+                <td>Nombre completo, correo electrónico, teléfono</td>
+                <td>Todos los usuarios</td>
+              </tr>
+              <tr>
+                <td><strong>Perfil</strong></td>
+                <td>Foto de perfil, fecha de nacimiento, género</td>
+                <td>Todos los usuarios</td>
+              </tr>
+              <tr>
+                <td><strong>Ubicación</strong></td>
+                <td>Ubicación en tiempo real (solo cuando se usa la app)</td>
+                <td>Todos los usuarios</td>
+              </tr>
+              <tr>
+                <td><strong>Salud</strong></td>
+                <td>
+                  Signos vitales, medicamentos, condición médica, alergias, tipo
+                  de sangre
+                </td>
+                <td>Pacientes</td>
+              </tr>
+              <tr>
+                <td><strong>Profesional</strong></td>
+                <td>
+                  Certificaciones, especialidad, años de experiencia, documentos
+                  de identidad
+                </td>
+                <td>Cuidadores</td>
+              </tr>
+              <tr>
+                <td><strong>Financiero</strong></td>
+                <td>
+                  Historial de transacciones en VCredits (no datos de tarjeta)
+                </td>
+                <td>Todos los usuarios</td>
+              </tr>
+              <tr>
+                <td><strong>Comunicación</strong></td>
+                <td>Mensajes del chat entre paciente y cuidador</td>
+                <td>Todos los usuarios</td>
+              </tr>
+              <tr>
+                <td><strong>Uso</strong></td>
+                <td>
+                  Actividad en la app, pasos del pedómetro, hora de conexión
+                </td>
+                <td>Pacientes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout blue">
+          <span class="callout-icon">ℹ️</span>
+          <div class="callout-text">
+            <strong>Datos mínimos necesarios</strong>
+            Solo recopilamos lo estrictamente necesario para conectar pacientes
+            con cuidadores y garantizar la seguridad del servicio. No
+            recopilamos datos de tarjetas de crédito — eso lo gestiona Wompi
+            directamente.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="s3">
+        <div class="section-header">
+          <span class="section-num">3</span>
+          <h2>Datos sensibles de salud</h2>
+        </div>
+        <p>
+          Por la naturaleza de Vitality, tratamos datos sensibles de salud.
+          Estos reciben protección especial conforme al
+          <strong>Artículo 6 de la Ley 1581 de 2012</strong>.
+        </p>
+        <ul>
+          <li>
+            Signos vitales (frecuencia cardíaca, presión arterial, temperatura,
+            saturación de oxígeno).
+          </li>
+          <li>Medicamentos activos y su dosificación.</li>
+          <li>Condición médica diagnosticada y alergias.</li>
+          <li>Tipo de sangre y contacto de emergencia.</li>
+          <li>Registros emocionales y de bienestar.</li>
+        </ul>
+        <div class="callout red">
+          <span class="callout-icon">🔐</span>
+          <div class="callout-text">
+            <strong>Máxima protección</strong>
+            Los datos de salud solo son accesibles por el paciente y el cuidador
+            asignado al servicio activo. Ningún otro usuario, empleado o tercero
+            puede acceder a esta información sin autorización expresa.
+          </div>
+        </div>
+        <div class="callout purple">
+          <span class="callout-icon">👨‍⚕️</span>
+          <div class="callout-text">
+            <strong>Acceso del cuidador</strong>
+            El cuidador asignado a un servicio activo puede ver la ficha médica,
+            signos vitales y medicamentos del paciente únicamente durante la
+            vigencia del servicio. Al completarse, el acceso se revoca
+            automáticamente.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="section" id="s4">
+        <div class="section-header">
+          <span class="section-num">4</span>
+          <h2>Finalidad del tratamiento</h2>
+        </div>
+        <p>Usamos tus datos exclusivamente para:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Finalidad</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Prestación del servicio</strong></td>
+                <td>
+                  Conectar pacientes con cuidadores y gestionar el ciclo
+                  completo del servicio.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Autenticación</strong></td>
+                <td>Verificar la identidad del usuario al iniciar sesión.</td>
+              </tr>
+              <tr>
+                <td><strong>Matching</strong></td>
+                <td>
+                  Calcular el cuidador más compatible usando ubicación,
+                  especialidad y disponibilidad.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pagos</strong></td>
+                <td>Gestionar recargas de VCredits y pagos de servicios.</td>
+              </tr>
+              <tr>
+                <td><strong>Seguridad</strong></td>
+                <td>
+                  Prevenir fraudes, suplantación de identidad y uso indebido.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Notificaciones</strong></td>
+                <td>
+                  Enviar alertas de servicios, medicamentos y novedades de la
+                  cuenta.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Mejora del servicio</strong></td>
+                <td>
+                  Analizar el uso anónimo de la app para mejorar la experiencia.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Legal</strong></td>
+                <td>
+                  Cumplir obligaciones legales ante autoridades colombianas
+                  cuando sea requerido.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="s5">
+        <div class="section-header">
+          <span class="section-num">5</span>
+          <h2>Base legal del tratamiento</h2>
+        </div>
+        <p>El tratamiento de tus datos se basa en:</p>
+        <ul>
+          <li>
+            <strong>Consentimiento expreso</strong> — otorgado al aceptar esta
+            política durante el registro.
+          </li>
+          <li>
+            <strong>Ejecución del contrato</strong> — necesario para prestar el
+            servicio solicitado.
+          </li>
+          <li>
+            <strong>Interés legítimo</strong> — prevención de fraude y seguridad
+            de la plataforma.
+          </li>
+          <li>
+            <strong>Obligación legal</strong> — cumplimiento de la Ley 1581 de
+            2012 y normativas aplicables.
+          </li>
+        </ul>
+        <div class="callout green">
+          <span class="callout-icon">✅</span>
+          <div class="callout-text">
+            <strong>Consentimiento</strong>
+            Puedes retirar tu consentimiento en cualquier momento desde la
+            configuración de tu cuenta o escribiendo a soporte@vitality.com.co.
+            El retiro del consentimiento no afecta el tratamiento previo
+            realizado de forma lícita.
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="s6">
+        <div class="section-header">
+          <span class="section-num">6</span>
+          <h2>Con quién compartimos tus datos</h2>
+        </div>
+        <p>
+          Vitality <strong>no vende</strong> datos personales. Solo los
+          compartimos en los siguientes casos:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Destinatario</th>
+                <th>Datos compartidos</th>
+                <th>Motivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cuidador asignado</strong></td>
+                <td>Nombre, ficha médica básica, mensajes del chat</td>
+                <td>Prestación del servicio</td>
+              </tr>
+              <tr>
+                <td><strong>Supabase</strong></td>
+                <td>Todos los datos</td>
+                <td>Almacenamiento en la nube (servidor seguro)</td>
+              </tr>
+              <tr>
+                <td><strong>Wompi</strong></td>
+                <td>Datos de pago para procesar transacciones</td>
+                <td>Procesamiento de pagos</td>
+              </tr>
+              <tr>
+                <td><strong>Firebase FCM</strong></td>
+                <td>Token de dispositivo</td>
+                <td>Envío de notificaciones push</td>
+              </tr>
+              <tr>
+                <td><strong>Autoridades legales</strong></td>
+                <td>Los requeridos por orden judicial o ley</td>
+                <td>Cumplimiento legal</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout yellow">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-text">
+            <strong>Proveedores de servicios</strong>
+            Supabase, Wompi y Firebase actúan como encargados del tratamiento
+            bajo acuerdos de confidencialidad. No pueden usar tus datos para
+            fines propios distintos a los acordados con Vitality.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="s7">
+        <div class="section-header">
+          <span class="section-num">7</span>
+          <h2>Almacenamiento y seguridad</h2>
+        </div>
+        <p>
+          Tus datos se almacenan en servidores seguros proporcionados por
+          <strong>Supabase</strong>, con infraestructura en la nube con
+          certificación SOC 2.
+        </p>
+        <ul>
+          <li>
+            Todas las comunicaciones usan cifrado <strong>SSL/TLS</strong>.
+          </li>
+          <li>
+            Las contraseñas se almacenan con <strong>hash bcrypt</strong> —
+            nunca en texto plano.
+          </li>
+          <li>
+            Los documentos e imágenes se guardan en
+            <strong>almacenamiento privado</strong> con URLs firmadas de acceso
+            temporal.
+          </li>
+          <li>
+            Se realizan <strong>backups automáticos</strong> de la base de
+            datos.
+          </li>
+          <li>
+            El acceso a datos está protegido por
+            <strong>Row Level Security (RLS)</strong> en Supabase.
+          </li>
+          <li>
+            Los datos se conservan mientras la cuenta esté activa. Al eliminar
+            la cuenta, los datos se borran en un plazo máximo de
+            <strong>30 días</strong>.
+          </li>
+        </ul>
+        <div class="callout blue">
+          <span class="callout-icon">🗄️</span>
+          <div class="callout-text">
+            <strong>Ubicación de los servidores</strong>
+            Los datos pueden almacenarse en servidores ubicados en Estados
+            Unidos o la Unión Europea, bajo los estándares de transferencia
+            internacional de datos permitidos por la legislación colombiana.
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="s8">
+        <div class="section-header">
+          <span class="section-num">8</span>
+          <h2>Tus derechos (Habeas Data)</h2>
+        </div>
+        <p>
+          Conforme a la <strong>Ley 1581 de 2012</strong>, tienes los siguientes
+          derechos sobre tus datos:
+        </p>
+
+        <div class="rights-grid">
+          <div class="right-card">
+            <span class="right-icon">👁️</span>
+            <div>
+              <div class="right-title">Acceso</div>
+              <div class="right-desc">
+                Conocer qué datos tenemos sobre ti en cualquier momento.
+              </div>
+            </div>
+          </div>
+          <div class="right-card">
+            <span class="right-icon">✏️</span>
+            <div>
+              <div class="right-title">Corrección</div>
+              <div class="right-desc">
+                Actualizar o corregir datos inexactos o incompletos.
+              </div>
+            </div>
+          </div>
+          <div class="right-card">
+            <span class="right-icon">🗑️</span>
+            <div>
+              <div class="right-title">Supresión</div>
+              <div class="right-desc">
+                Solicitar la eliminación de tus datos personales.
+              </div>
+            </div>
+          </div>
+          <div class="right-card">
+            <span class="right-icon">🚫</span>
+            <div>
+              <div class="right-title">Revocación</div>
+              <div class="right-desc">
+                Retirar el consentimiento dado para el tratamiento.
+              </div>
+            </div>
+          </div>
+          <div class="right-card">
+            <span class="right-icon">📋</span>
+            <div>
+              <div class="right-title">Portabilidad</div>
+              <div class="right-desc">
+                Recibir tus datos en un formato legible y estructurado.
+              </div>
+            </div>
+          </div>
+          <div class="right-card">
+            <span class="right-icon">⚖️</span>
+            <div>
+              <div class="right-title">Queja</div>
+              <div class="right-desc">
+                Presentar queja ante la Superintendencia de Industria y
+                Comercio.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout green">
+          <span class="callout-icon">📬</span>
+          <div class="callout-text">
+            <strong>¿Cómo ejercer tus derechos?</strong>
+            Escríbenos a soporte@vitality.com.co con tu solicitud. Respondemos
+            en un plazo máximo de <strong>10 días hábiles</strong> conforme a lo
+            establecido en la Ley 1581 de 2012.
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="s9">
+        <div class="section-header">
+          <span class="section-num">9</span>
+          <h2>Menores de edad</h2>
+        </div>
+        <p>
+          Vitality está dirigida a mayores de 18 años. No recopilamos
+          intencionalmente datos de menores de edad.
+        </p>
+        <ul>
+          <li>
+            Si eres menor de 18 años, necesitas la autorización y supervisión de
+            un adulto responsable para usar Vitality.
+          </li>
+          <li>
+            Los datos de salud de un menor solo pueden ser registrados por su
+            representante legal o el cuidador asignado.
+          </li>
+          <li>
+            Si detectamos que hemos recopilado datos de un menor sin
+            autorización, los eliminaremos de inmediato.
+          </li>
+        </ul>
+        <div class="callout yellow">
+          <span class="callout-icon">👨‍👩‍👧</span>
+          <div class="callout-text">
+            <strong>Función Compartir Salud</strong>
+            La funcionalidad de compartir información de salud familiar permite
+            que un adulto gestione los datos de salud de menores a su cargo,
+            siempre bajo su responsabilidad y consentimiento.
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="s10">
+        <div class="section-header">
+          <span class="section-num">10</span>
+          <h2>Cookies y analytics</h2>
+        </div>
+        <p>
+          La aplicación móvil Vitality no usa cookies. Sin embargo, utiliza las
+          siguientes herramientas de análisis:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Herramienta</th>
+                <th>Finalidad</th>
+                <th>Datos recopilados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Expo / React Native</strong></td>
+                <td>Funcionamiento de la app</td>
+                <td>Errores técnicos anónimos</td>
+              </tr>
+              <tr>
+                <td><strong>Firebase Analytics</strong></td>
+                <td>Métricas de uso anónimas</td>
+                <td>Pantallas visitadas, tiempo de uso</td>
+              </tr>
+              <tr>
+                <td><strong>Firebase FCM</strong></td>
+                <td>Notificaciones push</td>
+                <td>Token del dispositivo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Todos los datos de analytics son anónimos y agregados. No se usa para
+          identificar usuarios individuales.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div class="section" id="s11">
+        <div class="section-header">
+          <span class="section-num">11</span>
+          <h2>Cambios a esta política</h2>
+        </div>
+        <p>
+          Vitality puede actualizar esta Política de Privacidad cuando sea
+          necesario para reflejar cambios en la app, la ley o nuestras
+          prácticas.
+        </p>
+        <ul>
+          <li>
+            Te notificaremos con al menos
+            <strong>15 días de anticipación</strong> mediante una notificación
+            en la app.
+          </li>
+          <li>
+            La fecha de la última actualización siempre estará visible al inicio
+            de este documento.
+          </li>
+          <li>
+            El uso continuado de la app después de los cambios implica
+            aceptación de la nueva política.
+          </li>
+          <li>
+            Si los cambios son sustanciales, solicitaremos una nueva aceptación
+            expresa.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 12 -->
+      <div class="section" id="s12">
+        <div class="section-header">
+          <span class="section-num">12</span>
+          <h2>Contacto y quejas</h2>
+        </div>
+        <p>
+          Para cualquier consulta, solicitud o queja relacionada con el
+          tratamiento de tus datos personales:
+        </p>
+        <ul>
+          <li><strong>Correo:</strong> soporte@vitality.com.co</li>
+          <li><strong>Tiempo de respuesta:</strong> máximo 10 días hábiles</li>
+          <li><strong>Ciudad:</strong> Bucaramanga, Santander, Colombia</li>
+        </ul>
+        <p>
+          Si consideras que tu solicitud no fue atendida correctamente, puedes
+          presentar una queja ante la
+          <strong>Superintendencia de Industria y Comercio (SIC)</strong> en
+          www.sic.gov.co
+        </p>
+        <div class="callout blue">
+          <span class="callout-icon">🏛️</span>
+          <div class="callout-text">
+            <strong>Autoridad de control</strong>
+            La Superintendencia de Industria y Comercio (SIC) es la entidad
+            encargada de vigilar el cumplimiento de la Ley 1581 de 2012 en
+            Colombia. Línea de atención: 01 8000 910 165.
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="contact-card">
+        <h3>Tu privacidad es nuestra prioridad</h3>
+        <p>¿Tienes preguntas sobre cómo usamos tus datos? Contáctanos</p>
+        <div class="contact-pills">
+          <a href="mailto:soporte@vitality.com.co" class="contact-pill"
+            >✉️ soporte@vitality.com.co</a
+          >
+          <a href="#" class="contact-pill">📱 Vitality App</a>
+          <a href="https://www.sic.gov.co" class="contact-pill"
+            >🏛️ SIC Colombia</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>
+        © 2025 <strong>Vitality</strong> — Todos los derechos reservados ·
+        Colombia · Versión 1.0.0
+      </p>
+      <p style="margin-top: 6px">
+        Cumplimiento: Ley 1581 de 2012 · Decreto 1377 de 2013 · Ley 527 de 1999
+        · Resolución 76434 de 2012 SIC
+      </p>
+    </div>
+  </body>
+</html>
