@@ -4,18 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Términos y Condiciones — Vitality</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap");
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./assets/icon.png" />
+    <meta name="theme-color" content="#fbfbfd" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
       :root {
         --blue: #2563eb;
-        --blue-light: #eff6ff;
-        --blue-mid: #bfdbfe;
-        --dark: #0f172a;
-        --mid: #334155;
-        --muted: #64748b;
-        --border: #e2e8f0;
-        --bg: #f8fafc;
+        --blue-dark: #1d4ed8;
+        --blue-light: #eff4ff;
+        --bg: #fbfbfd;
+        --surface: #ffffff;
+        --text: #05070d;
+        --text-muted: #313a49;
+        --text-faint: #6b7688;
+        --border: #e7eaf1;
+        --radius-lg: 28px;
+        --radius-md: 18px;
+        --radius-sm: 12px;
+        --radius-pill: 999px;
+        --font-display: "Fraunces", serif;
+        --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+        --font-mono: "IBM Plex Mono", monospace;
       }
 
       * {
@@ -24,942 +41,1006 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        font-family: "Inter", sans-serif;
+        font-family: var(--font-body);
         background: var(--bg);
-        color: var(--dark);
+        color: var(--text);
         line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
       }
 
-      /* ── HERO ── */
-      .hero {
-        background: linear-gradient(
-          135deg,
-          #1d4ed8 0%,
-          #2563eb 50%,
-          #3b82f6 100%
-        );
-        padding: 64px 24px 80px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
+      a {
+        color: var(--blue);
+        text-decoration: none;
       }
 
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(ellipse at 70% 20%, #60a5fa33 0%, transparent 60%),
-          radial-gradient(ellipse at 20% 80%, #1e40af44 0%, transparent 50%);
+      .doc-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        background: rgba(251, 251, 253, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
       }
 
-      .hero-badge {
+      .doc-nav a.back-home {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 17px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--text);
+      }
+
+      .doc-nav .doc-meta {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-faint);
+      }
+
+      .doc-header {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 64px 32px 40px;
+      }
+
+      .doc-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+
+      .doc-title {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 600;
+        font-size: clamp(32px, 4vw, 46px);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 18px;
+      }
+
+      .doc-badge {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 100px;
-        padding: 6px 16px;
-        font-size: 13px;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 20px;
-        position: relative;
-      }
-
-      .hero-badge .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #4ade80;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.4;
-        }
-      }
-
-      .hero h1 {
-        font-family: "Syne", sans-serif;
-        font-size: clamp(32px, 6vw, 52px);
-        font-weight: 800;
-        color: #fff;
-        letter-spacing: -1px;
-        position: relative;
-        margin-bottom: 12px;
-      }
-
-      .hero p {
-        font-size: 16px;
-        color: #bfdbfe;
-        position: relative;
-        max-width: 480px;
-        margin: 0 auto 24px;
-      }
-
-      .hero-meta {
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        flex-wrap: wrap;
-        position: relative;
-      }
-
-      .hero-meta span {
-        font-size: 13px;
-        color: #93c5fd;
-        font-weight: 500;
-      }
-
-      /* ── LAYOUT ── */
-      .container {
-        max-width: 780px;
-        margin: 0 auto;
-        padding: 48px 24px 80px;
-      }
-
-      /* ── TOC ── */
-      .toc {
-        background: #fff;
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        color: var(--text-muted);
+        background: var(--surface);
         border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 28px;
-        margin-bottom: 40px;
+        padding: 8px 16px;
+        border-radius: var(--radius-pill);
+      }
+
+      .doc-layout {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 32px 100px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      .toc {
+        position: sticky;
+        top: 90px;
       }
 
       .toc-title {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--blue);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        color: var(--text-faint);
+        font-weight: 600;
         margin-bottom: 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
       }
 
       .toc ol {
         list-style: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        border-left: 2px solid var(--border);
       }
 
-      @media (max-width: 520px) {
+      .toc a {
+        display: block;
+        padding: 7px 0 7px 16px;
+        font-size: 13.5px;
+        color: var(--text-muted);
+        border-left: 2px solid transparent;
+        margin-left: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+
+      .toc a:hover {
+        color: var(--text);
+      }
+
+      .toc a.active {
+        color: var(--blue);
+        border-left-color: var(--blue);
+        font-weight: 600;
+      }
+
+      .doc-content {
+        max-width: 720px;
+      }
+
+      .doc-content section {
+        padding-top: 8px;
+        margin-bottom: 56px;
+        scroll-margin-top: 90px;
+      }
+
+      .doc-content h2 {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: -0.01em;
+        margin-bottom: 18px;
+        color: var(--text);
+      }
+
+      .doc-content h3 {
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 15.5px;
+        margin: 20px 0 8px;
+        color: var(--text);
+      }
+
+      .doc-content p {
+        font-size: 15.5px;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+      }
+
+      .doc-content strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .doc-content ul {
+        margin: 0 0 14px 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .doc-content ul li {
+        font-size: 15.5px;
+        color: var(--text-muted);
+        padding-left: 22px;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .doc-content ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--blue);
+      }
+
+      /* ===== CLÁUSULAS NUMERADAS (3.1, 4.1...) ===== */
+      .clause-list {
+        margin-bottom: 24px;
+      }
+
+      .clause {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .clause:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .clause-num {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--blue);
+        font-weight: 600;
+        flex-shrink: 0;
+        padding-top: 2px;
+        min-width: 34px;
+      }
+
+      .clause-body p {
+        margin-bottom: 0;
+      }
+
+      /* ===== COMPARACIÓN (sección 7: responsabilidad) ===== */
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 20px 0 24px;
+      }
+
+      .comparison-col {
+        border-radius: var(--radius-md);
+        padding: 22px;
+      }
+
+      .comparison-col.not-responsible {
+        background: var(--surface);
+        border: 1.5px dashed var(--border);
+      }
+
+      .comparison-col.responsible {
+        border: 1.5px solid var(--blue);
+        background: var(--blue-light);
+      }
+
+      .comparison-title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 14px;
+        color: var(--text);
+      }
+
+      .comparison-list {
+        list-style: none;
+      }
+
+      .comparison-list li {
+        font-size: 14px;
+        color: var(--text-muted);
+        padding-left: 18px;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .comparison-col.not-responsible .comparison-list li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--text-faint);
+        font-weight: 600;
+      }
+
+      .comparison-col.responsible .comparison-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--blue);
+      }
+
+      /* ===== BLOQUE DESTACADO (comisiones, definiciones clave) ===== */
+      .highlight-block {
+        background: var(--blue-light);
+        border-radius: var(--radius-md);
+        padding: 20px 24px;
+        margin: 8px 0 20px;
+      }
+
+      .highlight-block p {
+        color: var(--text);
+        margin-bottom: 0;
+      }
+
+      .fee-row {
+        display: flex;
+        gap: 12px;
+        margin: 16px 0 20px;
+        flex-wrap: wrap;
+      }
+
+      .fee-pill {
+        flex: 1;
+        min-width: 160px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 18px 20px;
+      }
+
+      .fee-pill-num {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: 28px;
+        color: var(--blue);
+        margin-bottom: 4px;
+      }
+
+      .fee-pill-label {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .contact-box {
+        background: var(--text);
+        border-radius: var(--radius-lg);
+        padding: 36px;
+        color: #fff;
+      }
+
+      .contact-box h2 {
+        color: #fff;
+      }
+
+      .contact-box p {
+        color: #b7c2dc;
+      }
+
+      .contact-box a {
+        color: #9db8ff;
+      }
+
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 16px;
+      }
+
+      .contact-item-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #7d8bb0;
+        margin-bottom: 4px;
+      }
+
+      .contact-item-value {
+        font-size: 14.5px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .back-top {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        cursor: pointer;
+        border: none;
+        z-index: 60;
+      }
+
+      .back-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-top svg {
+        width: 18px;
+        height: 18px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      @media (max-width: 900px) {
+        .doc-layout {
+          grid-template-columns: 1fr;
+        }
+        .toc {
+          position: static;
+          border-bottom: 1px solid var(--border);
+          padding-bottom: 24px;
+          margin-bottom: 24px;
+        }
         .toc ol {
+          flex-direction: row;
+          flex-wrap: wrap;
+          border-left: none;
+          gap: 8px;
+        }
+        .toc a {
+          border: 1px solid var(--border);
+          border-radius: var(--radius-pill);
+          padding: 6px 14px;
+          margin-left: 0;
+        }
+        .toc a.active {
+          border-color: var(--blue);
+          background: var(--blue-light);
+        }
+        .comparison-grid {
           grid-template-columns: 1fr;
         }
       }
 
-      .toc ol li a {
-        font-size: 14px;
-        color: var(--mid);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 10px;
-        border-radius: 8px;
-        transition:
-          background 0.15s,
-          color 0.15s;
-      }
-
-      .toc ol li a:hover {
-        background: var(--blue-light);
-        color: var(--blue);
-      }
-
-      .toc ol li a .num {
-        font-size: 12px;
-        font-weight: 700;
-        color: var(--blue);
-        background: var(--blue-light);
-        width: 22px;
-        height: 22px;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      /* ── SECCIONES ── */
-      .section {
-        margin-bottom: 48px;
-        scroll-margin-top: 24px;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 20px;
-        padding-bottom: 14px;
-        border-bottom: 2px solid var(--blue-light);
-      }
-
-      .section-num {
-        font-family: "Syne", sans-serif;
-        font-size: 13px;
-        font-weight: 800;
-        color: var(--blue);
-        background: var(--blue-light);
-        width: 32px;
-        height: 32px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .section h2 {
-        font-family: "Syne", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--dark);
-      }
-
-      .section p {
-        font-size: 15px;
-        color: var(--mid);
-        margin-bottom: 14px;
-      }
-
-      .section ul,
-      .section ol {
-        padding-left: 0;
-        list-style: none;
-        margin-bottom: 14px;
-      }
-
-      .section ul li,
-      .section ol li {
-        font-size: 15px;
-        color: var(--mid);
-        padding: 8px 0 8px 28px;
-        position: relative;
-        border-bottom: 1px solid var(--bg);
-      }
-
-      .section ul li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: var(--blue);
-        font-weight: 700;
-      }
-
-      .section ol {
-        counter-reset: item;
-      }
-      .section ol li {
-        counter-increment: item;
-      }
-      .section ol li::before {
-        content: counter(item) ".";
-        position: absolute;
-        left: 0;
-        color: var(--blue);
-        font-weight: 700;
-        font-size: 14px;
-      }
-
-      /* ── CALLOUTS ── */
-      .callout {
-        border-radius: 14px;
-        padding: 18px 20px;
-        margin-bottom: 16px;
-        display: flex;
-        gap: 14px;
-        align-items: flex-start;
-      }
-
-      .callout.blue {
-        background: var(--blue-light);
-        border: 1px solid var(--blue-mid);
-      }
-
-      .callout.yellow {
-        background: #fef9c3;
-        border: 1px solid #fde047;
-      }
-
-      .callout.red {
-        background: #fee2e2;
-        border: 1px solid #fecaca;
-      }
-
-      .callout.green {
-        background: #f0fdf4;
-        border: 1px solid #bbf7d0;
-      }
-
-      .callout-icon {
-        font-size: 20px;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .callout-text {
-        font-size: 14px;
-        color: var(--mid);
-        line-height: 1.6;
-      }
-
-      .callout-text strong {
-        display: block;
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 4px;
-      }
-
-      /* ── TABLA ── */
-      .table-wrap {
-        overflow-x: auto;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        margin-bottom: 20px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 14px;
-      }
-
-      thead tr {
-        background: var(--blue-light);
-      }
-
-      th {
-        padding: 12px 16px;
-        text-align: left;
-        font-weight: 700;
-        color: var(--blue);
-        font-family: "Syne", sans-serif;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-      }
-
-      td {
-        padding: 12px 16px;
-        color: var(--mid);
-        border-top: 1px solid var(--border);
-      }
-
-      tr:hover td {
-        background: var(--bg);
-      }
-
-      /* ── CONTACTO ── */
-      .contact-card {
-        background: linear-gradient(135deg, #1d4ed8, #2563eb);
-        border-radius: 20px;
-        padding: 32px;
-        text-align: center;
-        color: #fff;
-        margin-top: 48px;
-      }
-
-      .contact-card h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 8px;
-      }
-
-      .contact-card p {
-        color: #bfdbfe;
-        font-size: 15px;
-        margin-bottom: 20px;
-      }
-
-      .contact-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-      }
-
-      .contact-pill {
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 100px;
-        padding: 8px 18px;
-        font-size: 14px;
-        font-weight: 600;
-        color: #fff;
-        text-decoration: none;
-      }
-
-      /* ── FOOTER ── */
-      .footer {
-        text-align: center;
-        padding: 32px 24px;
-        font-size: 13px;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-      }
-
-      .footer strong {
-        color: var(--blue);
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Documento legal vigente
-      </div>
-      <h1>Términos y Condiciones</h1>
-      <p>Lee detenidamente antes de usar la aplicación Vitality</p>
-      <div class="hero-meta">
-        <span>📅 Versión 1.0.0</span>
-        <span>📍 Colombia</span>
-        <span>🔄 Vigente desde junio 2025</span>
-      </div>
+    <div class="doc-nav">
+      <a href="./index.html" class="back-home">Vitality</a>
+      <span class="doc-meta">Términos y Condiciones · v1.0</span>
     </div>
 
-    <div class="container">
-      <!-- TOC -->
-      <div class="toc">
-        <div class="toc-title">📋 Contenido</div>
-        <ol>
+    <header class="doc-header">
+      <div class="doc-eyebrow">Documento legal</div>
+      <h1 class="doc-title">Términos y Condiciones de Uso</h1>
+      <span class="doc-badge">Última actualización: 10 de julio de 2026</span>
+    </header>
+
+    <div class="doc-layout">
+      <nav class="toc" aria-label="Tabla de contenidos">
+        <div class="toc-title">Contenido</div>
+        <ol id="tocList">
+          <li><a href="#bienvenida">Bienvenida</a></li>
+          <li><a href="#naturaleza">1. Naturaleza de Vitality</a></li>
+          <li><a href="#quienes">2. Quiénes pueden usar Vitality</a></li>
+          <li><a href="#funciona">3. Cómo funciona el servicio</a></li>
+          <li><a href="#vcredits">4. VCredits, comisiones y pagos</a></li>
+          <li><a href="#cuidador">5. Obligaciones del Cuidador</a></li>
+          <li><a href="#paciente">6. Obligaciones del Paciente</a></li>
           <li>
-            <a href="#s1"><span class="num">1</span> Aceptación</a>
+            <a href="#responsabilidad">7. Exclusión de responsabilidad</a>
           </li>
+          <li><a href="#cancelaciones">8. Cancelaciones</a></li>
+          <li><a href="#propiedad">9. Propiedad intelectual</a></li>
+          <li><a href="#suspension">10. Suspensión de cuentas</a></li>
           <li>
-            <a href="#s2"><span class="num">2</span> Definiciones</a>
+            <a href="#validez">11. Validez de aceptaciones electrónicas</a>
           </li>
-          <li>
-            <a href="#s3"><span class="num">3</span> Uso de la app</a>
-          </li>
-          <li>
-            <a href="#s4"><span class="num">4</span> Registro</a>
-          </li>
-          <li>
-            <a href="#s5"><span class="num">5</span> Servicios</a>
-          </li>
-          <li>
-            <a href="#s6"><span class="num">6</span> VCredits y pagos</a>
-          </li>
-          <li>
-            <a href="#s7"><span class="num">7</span> Cuidadores</a>
-          </li>
-          <li>
-            <a href="#s8"><span class="num">8</span> Privacidad</a>
-          </li>
-          <li>
-            <a href="#s9"><span class="num">9</span> Prohibiciones</a>
-          </li>
-          <li>
-            <a href="#s10"><span class="num">10</span> Responsabilidad</a>
-          </li>
-          <li>
-            <a href="#s11"><span class="num">11</span> Cancelaciones</a>
-          </li>
-          <li>
-            <a href="#s12"><span class="num">12</span> Ley aplicable</a>
-          </li>
+          <li><a href="#ley">12. Ley aplicable y disputas</a></li>
+          <li><a href="#modificaciones">13. Modificaciones</a></li>
+          <li><a href="#contacto">14. Contacto</a></li>
         </ol>
-      </div>
+      </nav>
 
-      <!-- 1 -->
-      <div class="section" id="s1">
-        <div class="section-header">
-          <span class="section-num">1</span>
-          <h2>Aceptación de los términos</h2>
-        </div>
-        <p>
-          Al descargar, instalar o usar la aplicación <strong>Vitality</strong>,
-          usted acepta de forma expresa estos Términos y Condiciones, así como
-          nuestra Política de Privacidad. Si no está de acuerdo, no utilice la
-          aplicación.
-        </p>
-        <div class="callout blue">
-          <span class="callout-icon">ℹ️</span>
-          <div class="callout-text">
-            <strong>Consentimiento informado</strong>
-            Durante el registro, el usuario debe marcar una casilla confirmando
-            la lectura y aceptación de estos términos. La versión aceptada y la
-            fecha quedan registradas en nuestra base de datos.
+      <div class="doc-content">
+        <section id="bienvenida">
+          <h2>Bienvenida</h2>
+          <p>
+            Bienvenido a Vitality. Estos Términos y Condiciones ("Términos")
+            rigen el uso de la aplicación móvil Vitality
+            (<code>co.vitality.app</code>) y el sitio web appvitality.co
+            (colectivamente, la "Plataforma"), operada por
+            <strong>Daiber Arley Mantilla</strong>, persona natural con
+            domicilio en Bucaramanga, Santander, Colombia ("Vitality",
+            "nosotros").
+          </p>
+          <p>
+            Al crear una cuenta o usar la Plataforma, aceptas estos Términos en
+            su totalidad. Si no estás de acuerdo, no debes usar Vitality.
+          </p>
+        </section>
+
+        <section id="naturaleza">
+          <h2>1. Naturaleza de Vitality — Portal de Contacto</h2>
+          <p>
+            Vitality es una
+            <strong>plataforma electrónica de intermediación</strong> entre
+            Pacientes que buscan servicios de cuidado y Cuidadores profesionales
+            independientes que los ofrecen, en los términos del artículo 5°
+            numeral 18 de la Ley 1480 de 2011 ("Portal de Contacto").
+          </p>
+          <p>Esto significa que:</p>
+          <ul>
+            <li>
+              Vitality <strong>no presta directamente</strong> servicios de
+              cuidado, atención médica, terapias, ni ningún otro servicio de
+              salud. Vitality únicamente facilita el contacto entre Pacientes y
+              Cuidadores, y provee las herramientas tecnológicas para gestionar
+              la solicitud, el matching, la comunicación, el seguimiento y el
+              pago del servicio.
+            </li>
+            <li>
+              La relación de prestación del servicio de cuidado se concreta
+              <strong>directamente entre el Paciente y el Cuidador</strong>.
+              Vitality no es parte de esa relación de prestación del servicio,
+              sino del contrato de uso de la Plataforma.
+            </li>
+            <li>
+              Los Cuidadores son <strong>profesionales independientes</strong>,
+              no empleados, contratistas ni representantes de Vitality. Vitality
+              no supervisa la ejecución del servicio de cuidado ni garantiza sus
+              resultados.
+            </li>
+            <li>
+              Vitality no es una Institución Prestadora de Servicios de Salud
+              (IPS) ni está sujeta a habilitación sanitaria bajo la Resolución
+              3100 de 2019, precisamente porque no presta el servicio de cuidado
+              — solo conecta a quienes lo prestan con quienes lo requieren.
+            </li>
+          </ul>
+        </section>
+
+        <section id="quienes">
+          <h2>2. Quiénes pueden usar Vitality</h2>
+          <p>
+            Vitality está dirigida exclusivamente a personas
+            <strong>mayores de 18 años</strong>, tanto para el rol de Paciente
+            como de Cuidador.
+          </p>
+          <p>
+            <strong>Para registrarte como Paciente</strong>, debes proporcionar
+            información veraz de identificación y, si lo deseas, información de
+            salud relevante para recibir el servicio (ver nuestra Política de
+            Privacidad).
+          </p>
+          <p><strong>Para registrarte como Cuidador</strong>, debes además:</p>
+          <ul>
+            <li>Acreditar tu especialidad y experiencia profesional.</li>
+            <li>
+              Cargar los documentos de identidad y certificaciones que Vitality
+              solicite para verificación.
+            </li>
+            <li>
+              Aprobar el proceso de verificación de documentos antes de poder
+              ofrecer servicios en la Plataforma.
+            </li>
+          </ul>
+          <p>
+            Vitality se reserva el derecho de rechazar, suspender o cancelar el
+            registro de cualquier usuario que proporcione información falsa,
+            incompleta o que no cumpla con los requisitos de verificación.
+          </p>
+        </section>
+
+        <section id="funciona">
+          <h2>3. Cómo funciona el servicio</h2>
+          <div class="clause-list">
+            <div class="clause">
+              <div class="clause-num">3.1</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Solicitud.</strong> El Paciente solicita un servicio
+                  indicando la categoría (Cuidado General, Terapias, Psicología,
+                  Medicamentos, Atención en Casa, Rehabilitación), fecha y
+                  horario deseado.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">3.2</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Matching.</strong> Vitality utiliza un sistema de
+                  recomendación que evalúa especialidad, distancia, calificación
+                  y disponibilidad para sugerir Cuidadores disponibles. El
+                  Paciente elige libremente al Cuidador de su preferencia entre
+                  las opciones sugeridas.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">3.3</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Aceptación.</strong> El Cuidador seleccionado recibe
+                  la solicitud y puede aceptarla o rechazarla. Si la rechaza, el
+                  Paciente puede elegir a otro Cuidador de la lista.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">3.4</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Ejecución.</strong> El servicio se presta directamente
+                  entre el Paciente y el Cuidador, en los términos, lugar y
+                  condiciones que ambos acuerden dentro del alcance de la
+                  categoría solicitada.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">3.5</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Finalización.</strong> El Cuidador marca el servicio
+                  como completado al finalizar la atención. El Paciente puede
+                  calificar el servicio recibido.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          <p>
+            Vitality no garantiza la disponibilidad permanente de Cuidadores, ni
+            que un servicio solicitado será aceptado.
+          </p>
+        </section>
 
-      <!-- 2 -->
-      <div class="section" id="s2">
-        <div class="section-header">
-          <span class="section-num">2</span>
-          <h2>Definiciones</h2>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Término</th>
-                <th>Definición</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Vitality</strong></td>
-                <td>
-                  Aplicación móvil que conecta pacientes con cuidadores
-                  profesionales.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Paciente</strong></td>
-                <td>
-                  Usuario que solicita servicios de cuidado a través de la
-                  plataforma.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Cuidador</strong></td>
-                <td>
-                  Profesional de salud o cuidado registrado que ofrece sus
-                  servicios.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>VCredits</strong></td>
-                <td>
-                  Moneda interna de Vitality utilizada para transacciones dentro
-                  de la plataforma.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Servicio</strong></td>
-                <td>
-                  Atención profesional agendada entre paciente y cuidador
-                  mediante Vitality.
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Operador</strong></td>
-                <td>
-                  Persona natural o jurídica responsable de operar la plataforma
-                  Vitality en Colombia.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+        <section id="vcredits">
+          <h2>4. VCredits, comisiones y pagos</h2>
 
-      <!-- 3 -->
-      <div class="section" id="s3">
-        <div class="section-header">
-          <span class="section-num">3</span>
-          <h2>Uso de la aplicación</h2>
-        </div>
-        <p>
-          Vitality es una plataforma de intermediación. El uso está permitido
-          para mayores de 18 años o menores bajo supervisión de un adulto
-          responsable.
-        </p>
-        <ul>
-          <li>El usuario es responsable del uso de su cuenta y contraseña.</li>
-          <li>No está permitido compartir credenciales de acceso.</li>
-          <li>La app requiere conexión a internet para funcionar.</li>
-          <li>
-            Vitality se reserva el derecho de suspender cuentas que infrinjan
-            estas condiciones.
-          </li>
-          <li>
-            El uso debe ser exclusivamente para fines legítimos de cuidado y
-            salud.
-          </li>
-        </ul>
-        <div class="callout yellow">
-          <span class="callout-icon">⚠️</span>
-          <div class="callout-text">
-            <strong>Uso responsable</strong>
-            Vitality no reemplaza la atención médica de urgencias. En caso de
-            emergencia, contacte a los servicios de emergencia locales (123 en
-            Colombia) antes de usar la aplicación.
+          <div class="highlight-block">
+            <p>
+              <strong>4.1 VCredits</strong> es la moneda interna de Vitality
+              utilizada exclusivamente para el pago de las comisiones de la
+              Plataforma. El valor del servicio de cuidado en sí se acuerda y
+              paga <strong>directamente entre Paciente y Cuidador</strong>, por
+              fuera de la Plataforma.
+            </p>
           </div>
-        </div>
-      </div>
 
-      <!-- 4 -->
-      <div class="section" id="s4">
-        <div class="section-header">
-          <span class="section-num">4</span>
-          <h2>Registro y cuentas</h2>
-        </div>
-        <p>
-          Para usar Vitality es necesario crear una cuenta proporcionando
-          información veraz y actualizada.
-        </p>
-        <ul>
-          <li>Se requiere correo electrónico válido y contraseña segura.</li>
-          <li>
-            Los cuidadores deben adjuntar documentos que acrediten su formación
-            profesional.
-          </li>
-          <li>
-            Vitality verifica la identidad de los cuidadores antes de activar su
-            perfil.
-          </li>
-          <li>
-            El usuario debe notificar cualquier uso no autorizado de su cuenta.
-          </li>
-          <li>Una cuenta por persona. No se permiten cuentas duplicadas.</li>
-        </ul>
-        <div class="callout green">
-          <span class="callout-icon">✅</span>
-          <div class="callout-text">
-            <strong>Verificación de cuidadores</strong>
-            Todos los cuidadores pasan por un proceso de verificación de
-            documentos antes de poder ofrecer servicios en la plataforma.
+          <div class="clause-list">
+            <div class="clause">
+              <div class="clause-num">4.2</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Recargas.</strong> El Paciente y el Cuidador pueden
+                  recargar VCredits a través de Wompi (tarjeta, PSE, Nequi).
+                  Vitality no almacena datos de tarjetas; estos son procesados
+                  directamente por Wompi.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- 5 -->
-      <div class="section" id="s5">
-        <div class="section-header">
-          <span class="section-num">5</span>
-          <h2>Servicios disponibles</h2>
-        </div>
-        <p>
-          Vitality facilita la contratación de los siguientes servicios
-          profesionales:
-        </p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Servicio</th>
-                <th>Descripción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cuidado General</td>
-                <td>Acompañamiento y asistencia básica al paciente.</td>
-              </tr>
-              <tr>
-                <td>Terapias</td>
-                <td>Terapia física, ocupacional y de lenguaje.</td>
-              </tr>
-              <tr>
-                <td>Psicología</td>
-                <td>Apoyo psicológico y salud mental.</td>
-              </tr>
-              <tr>
-                <td>Medicamentos</td>
-                <td>Administración y seguimiento de medicación.</td>
-              </tr>
-              <tr>
-                <td>Atención en casa</td>
-                <td>Cuidado profesional en el domicilio del paciente.</td>
-              </tr>
-              <tr>
-                <td>Rehabilitación</td>
-                <td>Procesos de recuperación funcional.</td>
-              </tr>
-              <tr>
-                <td>Odontología</td>
-                <td>Atención odontológica básica a domicilio.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="callout blue">
-          <span class="callout-icon">📋</span>
-          <div class="callout-text">
-            <strong>Intermediación</strong>
-            Vitality actúa como intermediador entre pacientes y cuidadores. La
-            relación contractual del servicio es directamente entre el paciente
-            y el cuidador.
+          <p><strong>4.3 Comisiones.</strong></p>
+          <div class="fee-row">
+            <div class="fee-pill">
+              <div class="fee-pill-num">2%</div>
+              <div class="fee-pill-label">
+                Al Paciente, al momento de solicitar el servicio
+              </div>
+            </div>
+            <div class="fee-pill">
+              <div class="fee-pill-num">2%</div>
+              <div class="fee-pill-label">
+                Al Cuidador, al momento de aceptarlo
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          <p>Ambas comisiones se descuentan en VCredits.</p>
 
-      <!-- 6 -->
-      <div class="section" id="s6">
-        <div class="section-header">
-          <span class="section-num">6</span>
-          <h2>VCredits y pagos</h2>
-        </div>
-        <p>
-          Vitality opera con una moneda interna llamada
-          <strong>VCredits</strong> para gestionar los pagos de servicios.
-        </p>
-        <ul>
-          <li>1 VCredit equivale aproximadamente a COP $450.</li>
-          <li>
-            Los VCredits se recargan mediante Wompi (tarjeta, PSE o Nequi).
-          </li>
-          <li>
-            Los VCredits no tienen vencimiento mientras la cuenta esté activa.
-          </li>
-          <li>Los cuidadores reciben VCredits al completar un servicio.</li>
-          <li>
-            Los VCredits no son dinero en efectivo y no son reembolsables una
-            vez recargados, salvo en casos de falla técnica comprobada.
-          </li>
-          <li>
-            Vitality cobra una comisión de plataforma sobre cada transacción.
-          </li>
-        </ul>
-        <div class="callout yellow">
-          <span class="callout-icon">💳</span>
-          <div class="callout-text">
-            <strong>Pagos seguros</strong>
-            Todos los pagos se procesan a través de Wompi, plataforma
-            certificada PCI-DSS. Vitality no almacena datos de tarjetas de
-            crédito.
+          <div class="clause-list">
+            <div class="clause">
+              <div class="clause-num">4.4</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Reembolsos.</strong> Si el Cuidador rechaza el
+                  servicio, la comisión del Paciente es reembolsada en VCredits.
+                  Si el servicio se cancela después de confirmado, ambas
+                  comisiones son reembolsadas según corresponda, conforme a la
+                  lógica de cancelación definida en la Plataforma.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">4.5</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Retiros.</strong> El Cuidador puede solicitar el
+                  retiro de sus VCredits a una cuenta bancaria propia a través
+                  de Wompi. Los tiempos y condiciones de retiro serán los
+                  informados en la Plataforma al momento de la solicitud.
+                </p>
+              </div>
+            </div>
+            <div class="clause">
+              <div class="clause-num">4.6</div>
+              <div class="clause-body">
+                <p>
+                  <strong>Precios.</strong> Conforme al artículo 26 de la Ley
+                  1480 de 2011, toda comisión se informa en pesos colombianos
+                  antes de confirmar cualquier transacción, incluyendo los
+                  conceptos aplicables.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- 7 -->
-      <div class="section" id="s7">
-        <div class="section-header">
-          <span class="section-num">7</span>
-          <h2>Responsabilidad de cuidadores</h2>
-        </div>
-        <p>
-          Los cuidadores registrados en Vitality deben cumplir con los
-          siguientes requisitos:
-        </p>
-        <ul>
-          <li>
-            Poseer la formación y certificaciones requeridas para el servicio
-            ofrecido.
-          </li>
-          <li>Mantener su información y disponibilidad actualizadas.</li>
-          <li>Tratar a los pacientes con respeto y profesionalismo.</li>
-          <li>
-            Mantener confidencialidad sobre la información médica de los
-            pacientes.
-          </li>
-          <li>
-            Informar a Vitality sobre cualquier incidente durante la prestación
-            del servicio.
-          </li>
-          <li>
-            No ofrecer servicios fuera del alcance de su formación profesional.
-          </li>
-        </ul>
-        <div class="callout red">
-          <span class="callout-icon">🚫</span>
-          <div class="callout-text">
-            <strong>Incumplimiento</strong>
-            El incumplimiento de estas obligaciones puede resultar en la
-            suspensión o eliminación permanente de la cuenta del cuidador, sin
-            derecho a reembolso de VCredits pendientes.
+        <section id="cuidador">
+          <h2>5. Obligaciones y responsabilidad del Cuidador</h2>
+          <p>El Cuidador declara y garantiza que:</p>
+          <ul>
+            <li>
+              Cuenta con la formación, experiencia y, cuando aplique, las
+              certificaciones necesarias para prestar el servicio ofrecido.
+            </li>
+            <li>
+              Prestará el servicio con la diligencia, cuidado y profesionalismo
+              que su actividad exige.
+            </li>
+            <li>
+              Es el único responsable de la calidad, idoneidad y seguridad del
+              servicio de cuidado prestado, conforme al artículo 6° de la Ley
+              1480 de 2011, en su calidad de proveedor directo del servicio
+              frente al Paciente.
+            </li>
+            <li>
+              No usará la información de salud del Paciente para fines distintos
+              a la prestación del servicio contratado.
+            </li>
+            <li>
+              Cumplirá con toda normativa sanitaria, profesional y legal
+              aplicable a su actividad específica.
+            </li>
+          </ul>
+        </section>
+
+        <section id="paciente">
+          <h2>6. Obligaciones del Paciente</h2>
+          <p>El Paciente declara y garantiza que:</p>
+          <ul>
+            <li>
+              Proporcionará información veraz, completa y actualizada sobre su
+              identidad y su condición de salud, en la medida necesaria para que
+              el Cuidador pueda prestar el servicio de forma segura.
+            </li>
+            <li>
+              Pagará directamente al Cuidador el valor acordado por el servicio.
+            </li>
+            <li>
+              Usará la Plataforma únicamente para los fines para los que fue
+              diseñada.
+            </li>
+            <li>
+              No solicitará al Cuidador, ni aceptará de este, actividades por
+              fuera del alcance de las categorías de servicio ofrecidas por
+              Vitality.
+            </li>
+          </ul>
+        </section>
+
+        <section id="responsabilidad">
+          <h2>7. Exclusión de responsabilidad de Vitality</h2>
+          <p>En su calidad de Portal de Contacto:</p>
+          <div class="comparison-grid">
+            <div class="comparison-col not-responsible">
+              <div class="comparison-title">Vitality NO es responsable por</div>
+              <ul class="comparison-list">
+                <li>
+                  La calidad, idoneidad, seguridad o resultado del servicio de
+                  cuidado prestado por el Cuidador.
+                </li>
+                <li>
+                  Daños, lesiones, complicaciones de salud o perjuicios que
+                  ocurran durante la prestación del servicio entre Paciente y
+                  Cuidador.
+                </li>
+                <li>
+                  El incumplimiento de cualquiera de las partes respecto de los
+                  acuerdos que establezcan entre sí para la prestación del
+                  servicio.
+                </li>
+                <li>
+                  La veracidad de la información de salud proporcionada por el
+                  Paciente, más allá de la buena fe con la que Vitality gestiona
+                  dicha información.
+                </li>
+              </ul>
+            </div>
+            <div class="comparison-col responsible">
+              <div class="comparison-title">Vitality SÍ es responsable por</div>
+              <ul class="comparison-list">
+                <li>El funcionamiento técnico de la Plataforma.</li>
+                <li>
+                  La veracidad del proceso de verificación de documentos de los
+                  Cuidadores, dentro del alcance razonable de dicha
+                  verificación.
+                </li>
+                <li>
+                  La seguridad de los datos personales tratados, conforme a
+                  nuestra Política de Privacidad.
+                </li>
+                <li>
+                  El correcto procesamiento de las comisiones y transacciones
+                  gestionadas dentro de la Plataforma.
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- 8 -->
-      <div class="section" id="s8">
-        <div class="section-header">
-          <span class="section-num">8</span>
-          <h2>Privacidad y datos personales</h2>
-        </div>
-        <p>
-          Vitality cumple con la <strong>Ley 1581 de 2012</strong> (Habeas Data
-          Colombia) y el <strong>Decreto 1377 de 2013</strong> sobre protección
-          de datos personales.
-        </p>
-        <ul>
-          <li>
-            Los datos recopilados se usan exclusivamente para la prestación del
-            servicio.
-          </li>
-          <li>
-            No vendemos ni compartimos datos personales con terceros sin
-            consentimiento.
-          </li>
-          <li>
-            El usuario puede solicitar en cualquier momento el acceso,
-            corrección o eliminación de sus datos.
-          </li>
-          <li>
-            Los datos de salud (signos vitales, medicamentos, historial) son
-            tratados con máxima confidencialidad.
-          </li>
-          <li>
-            Se usan cookies y analytics anónimos para mejorar la experiencia.
-          </li>
-        </ul>
-        <p>
-          Para más información, consulta nuestra
-          <strong>Política de Privacidad</strong> completa disponible en la
-          aplicación.
-        </p>
-      </div>
+        <section id="cancelaciones">
+          <h2>8. Cancelaciones</h2>
+          <p>
+            El Paciente o el Cuidador pueden cancelar un servicio antes de su
+            ejecución, conforme a las condiciones y plazos indicados en la
+            Plataforma. Las comisiones ya cobradas se reembolsarán según
+            corresponda, de acuerdo con la sección 4.4.
+          </p>
+          <p>
+            Vitality podrá suspender temporalmente un servicio en curso ante
+            indicios razonables de riesgo para cualquiera de las partes.
+          </p>
+        </section>
 
-      <!-- 9 -->
-      <div class="section" id="s9">
-        <div class="section-header">
-          <span class="section-num">9</span>
-          <h2>Conductas prohibidas</h2>
-        </div>
-        <p>Está estrictamente prohibido:</p>
-        <ul>
-          <li>Usar la plataforma para actividades ilegales o fraudulentas.</li>
-          <li>Suplantar la identidad de otro usuario o cuidador.</li>
-          <li>Publicar información falsa sobre formación o certificaciones.</li>
-          <li>
-            Contactar a usuarios fuera de la plataforma para evadir comisiones.
-          </li>
-          <li>Acosar, amenazar o discriminar a otros usuarios.</li>
-          <li>Intentar hackear, vulnerar o dañar la plataforma.</li>
-          <li>Usar la app para ofrecer servicios médicos de urgencias.</li>
-        </ul>
-        <div class="callout red">
-          <span class="callout-icon">⛔</span>
-          <div class="callout-text">
-            <strong>Consecuencias</strong>
-            El incumplimiento conlleva la suspensión inmediata de la cuenta,
-            posible reporte a autoridades competentes y acciones legales según
-            la legislación colombiana vigente.
+        <section id="propiedad">
+          <h2>9. Propiedad intelectual</h2>
+          <p>
+            La Plataforma, su código, diseño, marca, logotipo y contenidos son
+            propiedad de Vitality o de sus licenciantes. Ninguna disposición de
+            estos Términos otorga al usuario derechos de propiedad intelectual
+            sobre la Plataforma, más allá de la licencia limitada, no exclusiva
+            e intransferible de uso personal de la aplicación.
+          </p>
+        </section>
+
+        <section id="suspension">
+          <h2>10. Suspensión y terminación de cuentas</h2>
+          <p>
+            Vitality podrá suspender o cancelar una cuenta cuando el usuario:
+          </p>
+          <ul>
+            <li>Proporcione información falsa o incompleta.</li>
+            <li>Incumpla estos Términos o la Política de Privacidad.</li>
+            <li>
+              Realice actividades fraudulentas, inseguras o que pongan en riesgo
+              a otros usuarios.
+            </li>
+            <li>
+              Reciba calificaciones consistentemente bajas que comprometan la
+              confianza en la Plataforma.
+            </li>
+          </ul>
+          <p>
+            El usuario podrá solicitar la eliminación de su cuenta en cualquier
+            momento, conforme a lo descrito en la Política de Privacidad.
+          </p>
+        </section>
+
+        <section id="validez">
+          <h2>11. Validez de las aceptaciones electrónicas</h2>
+          <p>
+            Conforme a los artículos 14 a 18 de la Ley 527 de 1999, la
+            aceptación de estos Términos y de cualquier transacción dentro de la
+            Plataforma mediante mensajes de datos (incluyendo checkboxes,
+            confirmaciones dentro de la app y solicitudes de servicio) tiene
+            plena validez y fuerza obligatoria, y se entiende proveniente del
+            usuario autenticado en la cuenta correspondiente.
+          </p>
+        </section>
+
+        <section id="ley">
+          <h2>12. Ley aplicable y resolución de disputas</h2>
+          <p>
+            Estos Términos se rigen por las leyes de la República de Colombia,
+            en particular la Ley 1480 de 2011 (Estatuto del Consumidor), la Ley
+            1581 de 2012 y la Ley 527 de 1999.
+          </p>
+          <p>
+            Cualquier controversia relacionada con el uso de la Plataforma será
+            resuelta, en primera instancia, mediante comunicación directa con
+            Vitality a través de
+            <a href="mailto:vitalityapp.co@gmail.com"
+              >vitalityapp.co@gmail.com</a
+            >. Si no se llega a un acuerdo, el usuario podrá acudir a la
+            Superintendencia de Industria y Comercio o a la jurisdicción
+            ordinaria competente en Colombia.
+          </p>
+        </section>
+
+        <section id="modificaciones">
+          <h2>13. Modificaciones a estos Términos</h2>
+          <p>
+            Vitality podrá modificar estos Términos para reflejar cambios en la
+            Plataforma o en la normativa aplicable. Los cambios sustanciales se
+            comunicarán con al menos 15 días de anticipación mediante
+            notificación en la app. El uso continuado de la Plataforma después
+            de la entrada en vigencia de los cambios implica su aceptación.
+          </p>
+        </section>
+
+        <section id="contacto">
+          <div class="contact-box">
+            <h2>14. Contacto</h2>
+            <div class="contact-row">
+              <div>
+                <div class="contact-item-label">Correo</div>
+                <div class="contact-item-value">
+                  <a href="mailto:vitalityapp.co@gmail.com"
+                    >vitalityapp.co@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div>
+                <div class="contact-item-label">Ciudad</div>
+                <div class="contact-item-value">
+                  Bucaramanga, Santander, Colombia
+                </div>
+              </div>
+              <div>
+                <div class="contact-item-label">Sitio web</div>
+                <div class="contact-item-value">appvitality.co</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- 10 -->
-      <div class="section" id="s10">
-        <div class="section-header">
-          <span class="section-num">10</span>
-          <h2>Limitación de responsabilidad</h2>
-        </div>
-        <p>Vitality es una plataforma de intermediación. En consecuencia:</p>
-        <ul>
-          <li>
-            Vitality no es responsable de la calidad del servicio prestado por
-            el cuidador.
-          </li>
-          <li>
-            No somos responsables de daños causados por información médica
-            incorrecta proporcionada por el usuario.
-          </li>
-          <li>
-            No garantizamos la disponibilidad ininterrumpida del servicio.
-          </li>
-          <li>
-            No somos responsables de pérdidas derivadas del uso indebido de la
-            plataforma.
-          </li>
-        </ul>
-        <div class="callout blue">
-          <span class="callout-icon">🛡️</span>
-          <div class="callout-text">
-            <strong>Sistema de calificaciones</strong>
-            Vitality implementa un sistema de calificaciones y reseñas para
-            ayudar a los pacientes a elegir cuidadores de confianza. Sin
-            embargo, estas calificaciones son opiniones de usuarios y no
-            constituyen garantía profesional.
-          </div>
-        </div>
-      </div>
-
-      <!-- 11 -->
-      <div class="section" id="s11">
-        <div class="section-header">
-          <span class="section-num">11</span>
-          <h2>Cancelaciones y reembolsos</h2>
-        </div>
-        <ul>
-          <li>
-            El paciente puede cancelar un servicio hasta 2 horas antes de la
-            hora acordada sin penalización.
-          </li>
-          <li>
-            Cancelaciones con menos de 2 horas pueden generar un cargo del 20%
-            del valor del servicio.
-          </li>
-          <li>
-            Si el cuidador cancela, el paciente recibe el 100% de los VCredits
-            de vuelta.
-          </li>
-          <li>
-            En caso de falla técnica de la plataforma, se reembolsan los
-            VCredits afectados.
-          </li>
-          <li>
-            Los VCredits recargados no son reembolsables en dinero salvo
-            decisión expresa de Vitality.
-          </li>
-        </ul>
-      </div>
-
-      <!-- 12 -->
-      <div class="section" id="s12">
-        <div class="section-header">
-          <span class="section-num">12</span>
-          <h2>Ley aplicable y jurisdicción</h2>
-        </div>
-        <p>
-          Estos términos se rigen por las leyes de la
-          <strong>República de Colombia</strong>. Cualquier controversia será
-          resuelta ante los tribunales competentes de la ciudad de
-          <strong>Bucaramanga, Santander</strong>.
-        </p>
-        <p>
-          Vitality se reserva el derecho de modificar estos términos en
-          cualquier momento, notificando a los usuarios con al menos
-          <strong>15 días de anticipación</strong> a través de la aplicación.
-        </p>
-        <div class="callout green">
-          <span class="callout-icon">📬</span>
-          <div class="callout-text">
-            <strong>Cambios en los términos</strong>
-            La continuación del uso de la aplicación después de la notificación
-            de cambios constituye aceptación de los nuevos términos.
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACTO -->
-      <div class="contact-card">
-        <h3>¿Tienes preguntas?</h3>
-        <p>
-          Estamos disponibles para resolver cualquier duda sobre estos términos
-        </p>
-        <div class="contact-pills">
-          <a href="mailto:soporte@vitality.com.co" class="contact-pill"
-            >✉️ soporte@vitality.com.co</a
+          <p
+            style="
+              margin-top: 24px;
+              font-size: 12.5px;
+              color: var(--text-faint);
+            "
           >
-          <a href="#" class="contact-pill">📱 Vitality App</a>
-          <a href="#" class="contact-pill">📍 Bucaramanga, Colombia</a>
-        </div>
+            Cumplimiento: Ley 1480 de 2011 · Ley 1581 de 2012 · Ley 527 de 1999
+            · Decreto 1377 de 2013
+          </p>
+        </section>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>
-        © 2025 <strong>Vitality</strong> — Todos los derechos reservados ·
-        Colombia · Versión 1.0.0
-      </p>
-      <p style="margin-top: 6px">
-        Cumplimiento: Ley 1581 de 2012 · Decreto 1377 de 2013 · Ley 527 de 1999
-      </p>
-    </div>
+    <button class="back-top" id="backTop" aria-label="Volver arriba">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+    </button>
+
+    <script>
+      const sections = document.querySelectorAll(".doc-content section[id]");
+      const tocLinks = document.querySelectorAll(".toc a");
+
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              tocLinks.forEach((link) => {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === `#${id}`,
+                );
+              });
+            }
+          });
+        },
+        { rootMargin: "-20% 0px -70% 0px" },
+      );
+
+      sections.forEach((section) => spy.observe(section));
+
+      const backTop = document.getElementById("backTop");
+      window.addEventListener(
+        "scroll",
+        () => {
+          backTop.classList.toggle("visible", window.scrollY > 500);
+        },
+        { passive: true },
+      );
+
+      backTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>
