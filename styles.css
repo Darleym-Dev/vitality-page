@@ -90,6 +90,44 @@ nav.nav-scrolled {
   box-shadow: 0 1px 0 var(--border);
 }
 
+/* ===== NAV — fix mobile (evita que el botón se rompa en 2 líneas) ===== */
+.nav-cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 16px 20px;
+  }
+
+  .nav-logo {
+    font-size: 16px;
+  }
+
+  .nav-cta {
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ===== HERO BUTTONS — evita que el texto largo empuje el layout ===== */
+.hero-actions {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .nav-logo {
   display: flex;
   align-items: center;
